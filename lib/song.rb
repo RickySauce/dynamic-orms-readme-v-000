@@ -21,7 +21,6 @@ class Song
       column_names << row["name"]
     end
     column_names.compact
-    binding.pry
   end
 
   self.column_names.each do |col_name|
@@ -50,6 +49,7 @@ class Song
       values << "'#{send(col_name)}'" unless send(col_name).nil?
     end
     values.join(", ")
+    binding.pry
   end
 
   def col_names_for_insert
